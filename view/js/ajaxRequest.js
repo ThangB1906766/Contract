@@ -26,4 +26,5 @@ function kiemTraDangNhap(){
             }
         }
     });
+    alert("Sai tên tài khoản hoặc mật khẩu !!");
 }

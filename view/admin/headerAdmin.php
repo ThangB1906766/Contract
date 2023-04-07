@@ -13,6 +13,13 @@
         <h2>Admin - WEBSITE</h2>
         <nav>
             <a href="index.php">Trang chủ</a>
-            <a href="index.php?act=dangxuat">Đăng xuất</a>
+            <a href="/controller/index.php?act=dangxuat">Đăng xuất</a>
+            <?php
+                if(isset($_SESSION['user_role']) && ($_SESSION['user_role'] !="")){
+                    echo '<a href="#">'.$_SESSION['user_role'].'</a>';
+                }else{
+
+                }
+            ?>
         </nav>
     </header>
