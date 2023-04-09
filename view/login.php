@@ -1,25 +1,3 @@
- <?php 
-    // session_start();
-    // ob_start();
-    // include "../model/connectdb.php";
-    // include "../model/user.php";
-
-
-    // if((isset($_POST['login'])) && ($_POST['login'])){
-    //     $user = $_POST['user'];
-    //     $pass = $_POST['pass'];
-        
-    //     $role = checkUser($user, $pass);
-
-    //     $_SESSION['user_role'] = $role;
-
-    //     if($role == 1){
-    //         header('location: /view/admin/home.php');
-    //     }else{
-    //         $txtErro = "Sai tài khoản hoặc mật khẩu";
-    //     }
-    // }
- ?>
 
  <!-- Start form đăng nhập -->
  <div id="wrapper">
@@ -36,15 +14,7 @@
                     <input type="password" name="pass" id="pass" class="form-control">
                 </div>
                 <div class="form-group my-3">
-                    <!-- <button type="button" class="btn btn-primary" id="userLoginBtn" onclick="kiemTraDangNhap()">Đăng Nhập</button> -->
                     <input type="submit" value="Đăng Nhập" class="btn-primary btn btn-block" name="login">
-                    <!-- <a href="index.php?act=home">Trang chủ</a> -->
-                    <small id="thongBao">
-                        <?php 
-                                            if(isset($txtErro) && ($txtErro !="")){
-                                                 echo "<font color='red'>".$txtErro."</font>";
-                        }?>
-                    </small> 
                 </div>
             </form>
         </div>

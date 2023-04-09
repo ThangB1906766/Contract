@@ -2,8 +2,7 @@
 <?php
         session_start();
         ob_start();
-    // if(isset($_SESSION['user_role']) && ($_SESSION['user_role']==1)){
-        
+    
         include "../model/connectdb.php";
         include "../model/user.php"; 
         include "../view/header.php";
@@ -15,21 +14,22 @@
                         if((isset($_POST['login'])) && ($_POST['login'])){
                             $user = $_POST['user'];
                             $pass = $_POST['pass'];
-                            $role = checkUser($user, $pass);
+                            $role = checkUser($user, $pass); // checkUser => return 0 or 1
                             if($role == 1){
                                 $_SESSION['user_role'] = $role;
+                                $_SESSION['user_taiKhoan'] = $user;
                                 header('location: /view/admin/home.php');
                             }else{
-                                // $_SESSION['user_role'] = $role;
-                                // $txtErro = "Sai tài khoản hoặc mật khẩu";
-                                // alert($txtErro);
-                                header('location: index.php');
+                                echo '<script type="text/javascript">
+                                            window.onload = function () { alert("Sai tên tài khoản hoặc mật khẩu!"); }
+                                        </script>';
+                                // header('location: index.php');
+                                echo header("refresh: 0.1");
                                 break;
                             }
                         }
-                        // include "/view/home.php";
                     case 'home':
-                        include "../view/home.php";
+                        include "../view/admin/home.php";
                         break;
                     case 'dangxuat':
                         if(isset($_SESSION['user_role'])){
@@ -45,8 +45,6 @@
             include "../view/login.php";
         }
         include "../view/footer.php";
-    // }
-
 ?>
 
 
