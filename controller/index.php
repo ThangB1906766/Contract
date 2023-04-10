@@ -5,8 +5,8 @@
     
         include "../model/connectdb.php";
         include "../model/user.php"; 
-        include "../view/header.php";
-
+        include "../model/table.php";
+        
         if(isset($_GET['act'])){
             $act = $_GET['act'];
                 switch ($act) {
@@ -18,18 +18,22 @@
                             if($role == 1){
                                 $_SESSION['user_role'] = $role;
                                 $_SESSION['user_taiKhoan'] = $user;
-                                header('location: /view/admin/home.php');
+
+                                $array_result = getAllDataInTable();
+                                include "../view/headerAdmin.php";
+                                include "../view/home.php";
+                                include "../view/footerAdmin.php";
+                                
                             }else{
                                 echo '<script type="text/javascript">
                                             window.onload = function () { alert("Sai tên tài khoản hoặc mật khẩu!"); }
                                         </script>';
-                                // header('location: index.php');
-                                echo header("refresh: 0.1");
+                                include "../view/login.php";
                                 break;
                             }
+                        }else{
+                            header('location: ../view/login.php');
                         }
-                    case 'home':
-                        include "../view/admin/home.php";
                         break;
                     case 'dangxuat':
                         if(isset($_SESSION['user_role'])){
@@ -42,9 +46,9 @@
                         break;
                 }
         }else{
-            include "../view/login.php";
+            
+            header('location: ../view/login.php');
         }
-        include "../view/footer.php";
 ?>
 
 

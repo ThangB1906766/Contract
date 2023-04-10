@@ -1,4 +1,4 @@
-
+<?php include "headerLogin.php" ?>
  <!-- Start form đăng nhập -->
  <div id="wrapper">
     <div class="container">
@@ -21,3 +21,6 @@
     </div>
 </div>  
   <!-- End form đăng nhập -->
+  <?php include "footerLogin.php" ?>
+
+  

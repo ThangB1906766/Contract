@@ -1,11 +1,17 @@
 
-                    <!-- Bordered Table start -->
+<?php 
+// include "../model/table.php";
+// include "../model/connectdb.php";
+// $array_result = getAllDataInTable();
+// var_dump($array_result);
+?>
+                <!-- Bordered Table start -->
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Sanh Sách Khởi Tạo Dịch Vụ</h4>
                                 <div class="single-table">
-                                    <div class="table-responsive">
+                                    <div class="table-responsive edit-full-content-in-table">
                                         <table class="table table-bordered text-center">
                                         <thead class="text-uppercase bg-primary">
                                             <tr class="text-white">
@@ -41,6 +47,10 @@
                                             </tr>
                                             </thead>
                                             <tbody>
+                                                <?php 
+                                                    // $array_result = getAllDataInTable();
+                                                    var_dump($array_result);
+                                                ?>
                                                 <tr>
                                                     <th scope="row">1</th>
                                                     <td>09/04/2023</td>
@@ -70,7 +80,10 @@
                                                     <td></td>
                                                     <td>25/10/2021</td>
                                                     <td></td>
-                                                    <td><i class="ti-trash"></i></td>
+                                                    <td>
+                                                        Xóa <i class="ti-trash"></i> /
+                                                        Cập nhật <i class="ti-trash"></i>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">2</th>
@@ -173,4 +186,4 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Bordered Table end -->                
+                <!-- Bordered Table end -->                

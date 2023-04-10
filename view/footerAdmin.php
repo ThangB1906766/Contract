@@ -193,14 +193,14 @@
 
     <!-- ------------------------------------------>
     <!-- jquery latest version -->
-    <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="/view/assets/js/vendor/jquery-2.2.4.min.js"></script>
     <!-- bootstrap 4 js -->
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/metisMenu.min.js"></script>
-    <script src="assets/js/jquery.slimscroll.min.js"></script>
-    <script src="assets/js/jquery.slicknav.min.js"></script>
+    <script src="/view/assets/js/popper.min.js"></script>
+    <script src="/view/assets/js/bootstrap.min.js"></script>
+    <script src="/view/assets/js/owl.carousel.min.js"></script>
+    <script src="/view/assets/js/metisMenu.min.js"></script>
+    <script src="/view/assets/js/jquery.slimscroll.min.js"></script>
+    <script src="/view/assets/js/jquery.slicknav.min.js"></script>
 
     <!-- Start datatable js -->
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
@@ -209,12 +209,12 @@
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
     <!-- others plugins -->
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/scripts.js"></script>
+    <script src="/view/assets/js/plugins.js"></script>
+    <script src="/view/assets/js/scripts.js"></script>
 
     <!-- Start Code By Thang -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="/view/js/ajaxRequest.js"></script>
+    <script src="/view//view/js/ajaxRequest.js"></script>
     <!-- End Code By Thang -->
 </body>
 
