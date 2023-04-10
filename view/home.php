@@ -1,10 +1,4 @@
 <?php
-// SESSION_start();
-// ob_start();
-// include "headerAdmin.php";
-
-
-
 if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
 
 ?>
@@ -28,5 +22,4 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
 else {
     header('Location: /controller/index.php');
 }
-// include "footerAdmin.php";
 ?>

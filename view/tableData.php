@@ -1,10 +1,5 @@
 
-<?php 
-// include "../model/table.php";
-// include "../model/connectdb.php";
-// $array_result = getAllDataInTable();
-// var_dump($array_result);
-?>
+
                 <!-- Bordered Table start -->
                     <div class="col-12 mt-5">
                         <div class="card">
@@ -15,7 +10,7 @@
                                         <table class="table table-bordered text-center">
                                         <thead class="text-uppercase bg-primary">
                                             <tr class="text-white">
-                                                <th>ID</th>
+                                                <th>STT</th>
                                                 <th>Ngày Ký HD</th>
                                                 <th>Tên Người Lập</th>
                                                 <th>Trạng Thái</th>
@@ -48,8 +43,49 @@
                                             </thead>
                                             <tbody>
                                                 <?php 
-                                                    // $array_result = getAllDataInTable();
-                                                    var_dump($array_result);
+                                                    // var_dump($array_result);
+                                                    if(isset($array_result) && (count($array_result) >= 1)){
+                                                        $stt=1;
+                                                        foreach ($array_result as $hopdong) {
+                                                            echo '
+                                                            <tr>
+                                                                <th scope="row">'.$stt.'</th>
+                                                                <td>'.$hopdong['hd_ngayKyHD'].'</td>
+                                                                <td>'.$hopdong['hd_tenNguoiLap'].'</td>
+                                                                <td>'.$hopdong['hd_trangThai'].'</td>
+                                                                <td>'.$hopdong['hd_loaiYeuCau'].'</td>
+                                                                <td>'.$hopdong['hd_dichVu'].'</td>
+                                                                <td>'.$hopdong['hd_maHopDong'].'</td>
+                                                                <td>'.$hopdong['hd_tenKhachHang'].'</td>
+                                                                <td>'.$hopdong['hd_diaChiKH'].'</td>
+                                                                <td>'.$hopdong['hd_maSoThue'].'</td>
+                                                                <td>'.$hopdong['hd_maBHXH'].'</td>
+                                                                <td>'.$hopdong['hd_tenGoi'].'</td>
+                                                                <td>'.$hopdong['hd_thoiGian'].'</td>
+                                                                <td>'.$hopdong['hd_giaTruocThue'].'</td>
+                                                                <td>'.$hopdong['hd_thueVAT'].'</td>
+                                                                <td>'.$hopdong['hd_giaTien'].'</td>
+                                                                <td>'.$hopdong['hd_token'].'</td>
+                                                                <td>'.$hopdong['hd_maGiaoDich'].'</td>
+                                                                <td>'.$hopdong['hd_maThueBao'].'</td>
+                                                                <td>'.$hopdong['hd_userName'].'</td>
+                                                                <td>'.$hopdong['hd_soSeri'].'</td>
+                                                                <td>'.$hopdong['hd_BBBG'].'</td>
+                                                                <td>'.$hopdong['hd_GCN'].'</td>
+                                                                <td>'.$hopdong['hd_soHoaDon'].'</td>
+                                                                <td>'.$hopdong['hd_maTraCuuHD'].'</td>
+                                                                <td>'.$hopdong['hd_ngayXuatHD'].'</td>
+                                                                <td>'.$hopdong['hd_mauHD'].'</td>
+                                                                <td>'.$hopdong['hd_ghiChu'].'</td>
+                                                                <td>
+                                                                    <a href="/controller/index.php?act=deleteData&id='.$hopdong['hd_id'].'">Xóa <i class="ti-trash"></i></a> /
+                                                                    <a href="/controller/index.php?act=updateData&id='.$hopdong['hd_id'].'"> Cập nhật <i class="ti-trash"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                            ';
+                                                            $stt++; 
+                                                        }
+                                                    }
                                                 ?>
                                                 <tr>
                                                     <th scope="row">1</th>
@@ -73,112 +109,19 @@
                                                     <td>cto_ca_1800577863</td>
                                                     <td>OIDCTO1800577863</td>
                                                     <td>5401010177f13a3e27e4391cd5185202</td>
-                                                    <td></td>
+                                                    <td>2023-04-11</td>
                                                     <td></td>
                                                     <td>0045704/ 25.10.21_CTO-LD/00139319</td>
                                                     <td></td>
-                                                    <td></td>
                                                     <td>25/10/2021</td>
                                                     <td></td>
+                                                    <td>Nội dung ghi chú</td>
                                                     <td>
-                                                        Xóa <i class="ti-trash"></i> /
-                                                        Cập nhật <i class="ti-trash"></i>
+                                                      <a href="/controller/index.php?">Xóa <i class="ti-trash"></i></a> /
+                                                       <a href=""> Cập nhật <i class="ti-trash"></i></a>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>09/04/2023</td>
-                                                    <td>Lê Minh Thắng</td>
-                                                    <td>Gửi Yêu Cầu</td>
-                                                    <td>Gia Hạn</td>
-                                                    <td>VNPT BHXH</td>
-                                                    <td>211011-D0097/VNPT VNP-TTKDCTO-PKHTCDN/HĐ VNPT-CA</td>
-                                                    <td>CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ CƠ GIỚI CÔNG TRÌNH TRƯỜNG TIẾN</td>
-                                                    <td>230 Nguyễn Trã, Ninh Kiều, TP Cần Thơ</td>
-                                                    <td>1800577863</td>
-                                                    <td></td>
-                                                    <td>Staff ID Pro</td>
-                                                    <td>18 tháng</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>220,000</td>
-                                                    <td>Tự Trang Bị</td>
-                                                    <td>CTO-LD/00139319</td>
-                                                    <td>cto_ca_1800577863</td>
-                                                    <td>OIDCTO1800577863</td>
-                                                    <td>5401010177f13a3e27e4391cd5185202</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>0045704/ 25.10.21_CTO-LD/00139319</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>25/10/2021</td>
-                                                    <td></td>
-                                                    <td><i class="ti-trash"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>09/04/2023</td>
-                                                    <td>Lê Minh Thắng</td>
-                                                    <td>Gửi Yêu Cầu</td>
-                                                    <td>Gia Hạn</td>
-                                                    <td>VNPT BHXH</td>
-                                                    <td>211011-D0097/VNPT VNP-TTKDCTO-PKHTCDN/HĐ VNPT-CA</td>
-                                                    <td>CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ CƠ GIỚI CÔNG TRÌNH TRƯỜNG TIẾN</td>
-                                                    <td>230 Nguyễn Trã, Ninh Kiều, TP Cần Thơ</td>
-                                                    <td>1800577863</td>
-                                                    <td></td>
-                                                    <td>Staff ID Pro</td>
-                                                    <td>18 tháng</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>220,000</td>
-                                                    <td>Tự Trang Bị</td>
-                                                    <td>CTO-LD/00139319</td>
-                                                    <td>cto_ca_1800577863</td>
-                                                    <td>OIDCTO1800577863</td>
-                                                    <td>5401010177f13a3e27e4391cd5185202</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>0045704/ 25.10.21_CTO-LD/00139319</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>25/10/2021</td>
-                                                    <td></td>
-                                                    <td><i class="ti-trash"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>09/04/2023</td>
-                                                    <td>Lê Minh Thắng</td>
-                                                    <td>Gửi Yêu Cầu</td>
-                                                    <td>Gia Hạn</td>
-                                                    <td>VNPT BHXH</td>
-                                                    <td>211011-D0097/VNPT VNP-TTKDCTO-PKHTCDN/HĐ VNPT-CA</td>
-                                                    <td>CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ CƠ GIỚI CÔNG TRÌNH TRƯỜNG TIẾN</td>
-                                                    <td>230 Nguyễn Trã, Ninh Kiều, TP Cần Thơ</td>
-                                                    <td>1800577863</td>
-                                                    <td></td>
-                                                    <td>Staff ID Pro</td>
-                                                    <td>18 tháng</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>220,000</td>
-                                                    <td>Tự Trang Bị</td>
-                                                    <td>CTO-LD/00139319</td>
-                                                    <td>cto_ca_1800577863</td>
-                                                    <td>OIDCTO1800577863</td>
-                                                    <td>5401010177f13a3e27e4391cd5185202</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>0045704/ 25.10.21_CTO-LD/00139319</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>25/10/2021</td>
-                                                    <td></td>
-                                                    <td><i class="ti-trash"></i></td>
-                                                </tr>
-                                            </tbody>
+                                               
                                             </tbody>
                                         </table>
                                     </div>
