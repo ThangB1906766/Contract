@@ -126,7 +126,7 @@
                             <div class="dropdown-menu">
                                 <!-- <a class="dropdown-item" href="#">Message</a>
                                 <a class="dropdown-item" href="#">Settings</a> -->
-                                <a class="dropdown-item" href="/controller/index.php?act=dangxuat">Log Out</a>
+                                <a class="dropdown-item" href="/controller/index.php?act=logout">Log Out</a>
                             </div>
                         </div>
                     </div>

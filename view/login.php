@@ -3,7 +3,7 @@
  <div id="wrapper">
     <div class="container">
         <div class="row justify-content-around">
-            <form action="/controller/index.php?act=dangnhap" method="POST" class="col-md-6 bg-light my-3">
+            <form action="/controller/index.php?act=login" method="POST" class="col-md-6 bg-light my-3">
                 <h1 class="text-center text-uppercase h3 py-3">Đăng Nhập</h1>
                 <div class="form-group">
                     <label for="user">Tài Khoản</label>
