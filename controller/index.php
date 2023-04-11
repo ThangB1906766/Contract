@@ -48,8 +48,56 @@
                             if(isset($_GET['id'])){
                                 $id = $_GET['id'];
                                 $hopdongId= getDataById($id);
-                                
+
+                                $array_result = getAllDataInTable();
+                                include "../view/headerAdmin.php";
+                                include "../view/updateFormUI.php";
+                                include "../view/footerAdmin.php";
                             }
+                            if(isset($_POST['hd_id'])){
+                                    $hd_id = $_POST['hd_id'];
+                                    $hd_ngayKyHD = $_POST['hd_ngayKyHD'];
+                                    $hd_tenNguoiLap = $_POST['hd_tenNguoiLap'];
+                                    $hd_trangThai = $_POST['hd_trangThai'];
+                                    $hd_loaiYeuCau = $_POST['hd_loaiYeuCau'];
+                                    $hd_dichVu = $_POST['hd_dichVu'];
+                                    $hd_maHopDong = $_POST['hd_maHopDong'];
+                                    $hd_tenKhachHang = $_POST['hd_tenKhachHang'];
+                                    $hd_diaChiKH = $_POST['hd_diaChiKH'];
+                                    $hd_maSoThue = $_POST['hd_maSoThue'];
+                                    $hd_maBHXH = $_POST['hd_maBHXH'];
+                                    $hd_tenGoi = $_POST['hd_tenGoi'];
+                                    $hd_thoiGian = $_POST['hd_thoiGian'];
+                                    $hd_giaTruocThue = $_POST['hd_giaTruocThue'];
+                                    $hd_thueVAT = $_POST['hd_thueVAT'];
+                                    $hd_giaTien = $_POST['hd_giaTien'];
+                                    $hd_token = $_POST['hd_token'];
+                                    $hd_maGiaoDich = $_POST['hd_maGiaoDich'];
+                                    $hd_maThueBao = $_POST['hd_maThueBao'];
+                                    $hd_userName = $_POST['hd_userName'];
+                                    $hd_soSeri = $_POST['hd_soSeri'];
+                                    $hd_BBBG = $_POST['hd_BBBG'];
+                                    $hd_GCN = $_POST['hd_GCN'];
+                                    $hd_soHoaDon = $_POST['hd_soHoaDon'];
+                                    $hd_maTraCuuHD = $_POST['hd_maTraCuuHD'];
+                                    $hd_ngayXuatHD = $_POST['hd_ngayXuatHD'];
+                                    $hd_mauHD = $_POST['hd_mauHD'];
+                                    $hd_ghiChu = $_POST['hd_ghiChu'];
+                                updateDataById($hd_id, $hd_ngayKyHD, $hd_tenNguoiLap, $hd_trangThai, $hd_loaiYeuCau, $hd_dichVu, $hd_maHopDong, $hd_tenKhachHang, $hd_diaChiKH, $hd_maSoThue, $hd_maBHXH, $hd_tenGoi, $hd_thoiGian, $hd_giaTruocThue, $hd_thueVAT, $hd_giaTien, $hd_token, $hd_maGiaoDich, $hd_maThueBao, $hd_userName, $hd_soSeri, $hd_BBBG, $hd_GCN, $hd_soHoaDon, $hd_maTraCuuHD, $hd_ngayXuatHD, $hd_mauHD, $hd_ghiChu);
+                                
+                                $array_result = getAllDataInTable();
+                                include "../view/headerAdmin.php";
+                                include "../view/home.php";
+                                include "../view/footerAdmin.php";
+                            }
+                            break;
+                        case 'btn_addNew':
+
+                            if(isset($_POST['btn_addNew']) && $_POST['btn_addNew']){
+                                // Lấy dữ liệu
+                                // Hàm thêm
+                            }
+
                             $array_result = getAllDataInTable();
                             include "../view/headerAdmin.php";
                             include "../view/updateFormUI.php";
@@ -60,6 +108,80 @@
                                 unset($_SESSION['user_role']);
                             }
                             header('location: index.php');
+                            break;
+
+                        case 'themmoi':
+                          
+                            break;
+                        case 'trove':
+                            $array_result = getAllDataInTable();
+                            include "../view/headerAdmin.php";
+                            include "../view/home.php";
+                            include "../view/footerAdmin.php";
+                            break;
+                        case 'detail':
+                            if(isset($_GET['id'])){
+                                $id = $_GET['id'];
+                                $hopdongId= getDataById($id);
+
+                                $array_result = getAllDataInTable();
+                                include "../view/headerAdmin.php";
+                                include "../view/detailFormUI.php";
+                                include "../view/footerAdmin.php";
+                            }
+                            break;
+                        case 'capnhatutrangchitiet':
+                                $array_result = getAllDataInTable();
+                                include "../view/headerAdmin.php";
+                                include "../view/home.php";
+                                include "../view/footerAdmin.php";
+                            break;
+                        case 'updateData2':
+                                if(isset($_GET['id'])){
+                                    $id = $_GET['id'];
+                                    $hopdongId= getDataById($id);
+    
+                                    $array_result = getAllDataInTable();
+                                    include "../view/headerAdmin.php";
+                                    include "../view/updateFormUI.php";
+                                    include "../view/footerAdmin.php";
+                                }
+                                if(isset($_POST['hd_id'])){
+                                        $hd_id = $_POST['hd_id'];
+                                        $hd_ngayKyHD = $_POST['hd_ngayKyHD'];
+                                        $hd_tenNguoiLap = $_POST['hd_tenNguoiLap'];
+                                        $hd_trangThai = $_POST['hd_trangThai'];
+                                        $hd_loaiYeuCau = $_POST['hd_loaiYeuCau'];
+                                        $hd_dichVu = $_POST['hd_dichVu'];
+                                        $hd_maHopDong = $_POST['hd_maHopDong'];
+                                        $hd_tenKhachHang = $_POST['hd_tenKhachHang'];
+                                        $hd_diaChiKH = $_POST['hd_diaChiKH'];
+                                        $hd_maSoThue = $_POST['hd_maSoThue'];
+                                        $hd_maBHXH = $_POST['hd_maBHXH'];
+                                        $hd_tenGoi = $_POST['hd_tenGoi'];
+                                        $hd_thoiGian = $_POST['hd_thoiGian'];
+                                        $hd_giaTruocThue = $_POST['hd_giaTruocThue'];
+                                        $hd_thueVAT = $_POST['hd_thueVAT'];
+                                        $hd_giaTien = $_POST['hd_giaTien'];
+                                        $hd_token = $_POST['hd_token'];
+                                        $hd_maGiaoDich = $_POST['hd_maGiaoDich'];
+                                        $hd_maThueBao = $_POST['hd_maThueBao'];
+                                        $hd_userName = $_POST['hd_userName'];
+                                        $hd_soSeri = $_POST['hd_soSeri'];
+                                        $hd_BBBG = $_POST['hd_BBBG'];
+                                        $hd_GCN = $_POST['hd_GCN'];
+                                        $hd_soHoaDon = $_POST['hd_soHoaDon'];
+                                        $hd_maTraCuuHD = $_POST['hd_maTraCuuHD'];
+                                        $hd_ngayXuatHD = $_POST['hd_ngayXuatHD'];
+                                        $hd_mauHD = $_POST['hd_mauHD'];
+                                        $hd_ghiChu = $_POST['hd_ghiChu'];
+                                    updateDataById($hd_id, $hd_ngayKyHD, $hd_tenNguoiLap, $hd_trangThai, $hd_loaiYeuCau, $hd_dichVu, $hd_maHopDong, $hd_tenKhachHang, $hd_diaChiKH, $hd_maSoThue, $hd_maBHXH, $hd_tenGoi, $hd_thoiGian, $hd_giaTruocThue, $hd_thueVAT, $hd_giaTien, $hd_token, $hd_maGiaoDich, $hd_maThueBao, $hd_userName, $hd_soSeri, $hd_BBBG, $hd_GCN, $hd_soHoaDon, $hd_maTraCuuHD, $hd_ngayXuatHD, $hd_mauHD, $hd_ghiChu);
+                                    
+                                    $array_result = getAllDataInTable();
+                                    include "../view/headerAdmin.php";
+                                    include "../view/home.php";
+                                    include "../view/footerAdmin.php";
+                                }
                             break;
                         default:
                             include "../view/login.php";
