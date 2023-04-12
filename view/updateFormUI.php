@@ -17,11 +17,11 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                         <h4 class="header-title">CẬP NHẬT</h4>
                                         <div class="form-group">
                                             <label for="example-date-input" class="col-form-label">Ngày Ký Hợp Đồng</label>
-                                            <input class="form-control" type="date" name="hd_ngayKyHD" value="<?=$hopdongId[0]['hd_ngayKyHD']?>" id="example-date-input">
+                                            <input required class="form-control" type="date" name="hd_ngayKyHD" value="<?=$hopdongId[0]['hd_ngayKyHD']?>" id="example-date-input">
                                         </div>
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Tên Người Lập</label>
-                                            <input class="form-control" type="text" name="hd_tenNguoiLap" value="<?=$hopdongId[0]['hd_tenNguoiLap']?>" id="example-text-input">
+                                            <input required class="form-control" type="text" name="hd_tenNguoiLap" value="<?=$hopdongId[0]['hd_tenNguoiLap']?>" id="example-text-input">
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Trạng Thái</label>
@@ -57,19 +57,19 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                         </div>
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Mã Hợp Đồng</label>
-                                            <input class="form-control" type="text" name="hd_maHopDong" value="<?=$hopdongId[0]['hd_maHopDong']?>" id="example-text-input">
+                                            <input required class="form-control" type="text" name="hd_maHopDong" value="<?=$hopdongId[0]['hd_maHopDong']?>" id="example-text-input">
                                         </div>
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Tên Khách Hàng</label>
-                                            <input class="form-control" type="text" name="hd_tenKhachHang" value="<?=$hopdongId[0]['hd_tenKhachHang']?>" id="example-text-input">
+                                            <input required class="form-control" type="text" name="hd_tenKhachHang" value="<?=$hopdongId[0]['hd_tenKhachHang']?>" id="example-text-input">
                                         </div>
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Địa chỉ Khách Hàng</label>
-                                            <input class="form-control" type="text" name="hd_diaChiKH" value="<?=$hopdongId[0]['hd_diaChiKH']?>" id="example-text-input">
+                                            <input required class="form-control" type="text" name="hd_diaChiKH" value="<?=$hopdongId[0]['hd_diaChiKH']?>" id="example-text-input">
                                         </div>
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Mã Số Thuế</label>
-                                            <input class="form-control" type="text" name="hd_maSoThue" value="<?=$hopdongId[0]['hd_maSoThue']?>" id="example-text-input">
+                                            <input required class="form-control" type="text" name="hd_maSoThue" value="<?=$hopdongId[0]['hd_maSoThue']?>" id="example-text-input">
                                         </div>
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Mã BHXH (Nếu có)</label>
@@ -77,10 +77,10 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                         </div>
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Tên Gói</label>
-                                            <input class="form-control" type="text" name="hd_tenGoi" value="<?=$hopdongId[0]['hd_tenGoi']?>" id="example-text-input">
+                                            <input required class="form-control" type="text" name="hd_tenGoi" value="<?=$hopdongId[0]['hd_tenGoi']?>" id="example-text-input">
                                         </div>
                                         <div class="form-group">
-                                            <label for="example-number-input" class="col-form-label">Thời Gian (Tháng)</label>
+                                            <label required for="example-number-input" class="col-form-label">Thời Gian (Tháng)</label>
                                             <input class="form-control" type="number" name="hd_thoiGian" value="<?=$hopdongId[0]['hd_thoiGian']?>" id="example-number-input">
                                         </div>
                                         <div class="form-group">
@@ -104,7 +104,7 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Giá Tiền</label>
                                             <div class="input-group">
-                                                <input type="text" name="hd_giaTien" value="<?=$hopdongId[0]['hd_giaTien']?>" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                                <input required type="text" name="hd_giaTien" value="<?=$hopdongId[0]['hd_giaTien']?>" class="form-control" aria-label="Amount (to the nearest dollar)">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">VND</span>
                                                 </div>
@@ -164,7 +164,7 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                         </div>
                                         <div class="form-group">
                                             <label for="example-date-input" class="col-form-label">Ngày Xuất Hóa Đơn</label>
-                                            <input class="form-control" type="date" name="hd_ngayXuatHD" value="<?=$hopdongId[0]['hd_ngayXuatHD']?>" id="example-date-input">
+                                            <input required class="form-control" type="date" name="hd_ngayXuatHD" value="<?=$hopdongId[0]['hd_ngayXuatHD']?>" id="example-date-input">
                                         </div>
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Mẫu Hóa Đơn</label>
@@ -175,8 +175,8 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                             <textarea class="form-control" aria-label="With textarea" name="hd_ghiChu"><?=$hopdongId[0]['hd_ghiChu']?></textarea>
                                         </div>
 
-                                        <button class="btn btn-primary" type="submit">Xác Nhận Cập nhật</button>
-                                        <a href="/controller/index.php?act=return" class="btn btn-warning">Trở về</a>
+                                        <button class="btn btn-primary" type="submit">Xác nhận cập nhật</button>
+                                        <a href="/controller/index.php?act=return" class="btn btn-warning">Trở về trang chủ</a>
                                         
                                     </div>
                                 </div>

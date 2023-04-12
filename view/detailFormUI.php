@@ -173,8 +173,8 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                             <label for="example-text-input" class="col-form-label">Ghi chú</label>
                                             <textarea class="form-control" aria-label="With textarea" name="hd_ghiChu" readonly ><?=$hopdongId[0]['hd_ghiChu']?></textarea>
                                         </div>
-                                        <a href="/controller/index.php?act=update&id=<?=$hopdongId[0]['hd_id']?>" class="btn btn-primary">Tiến Hành Cập nhật</a>
-                                        <a href="/controller/index.php?act=return" class="btn btn-warning">Trở về</a>
+                                        <a href="/controller/index.php?act=update&id=<?=$hopdongId[0]['hd_id']?>" class="btn btn-primary">Tiến hành cập nhật</a>
+                                        <a href="/controller/index.php?act=return" class="btn btn-warning">Trở về trang chủ</a>
                                         
                                     </div>
                                 </div>

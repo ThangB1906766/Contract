@@ -5,7 +5,7 @@
                                 <h4 class="header-title">Sanh Sách Khởi Tạo Dịch Vụ</h4>
                                 <div class="data-tables datatable-primary">
                                     <table id="dataTable2" class="text-center">
-                                        <a href="/controller/index.php?act=addNewAtHome" class="btn btn-primary" style="margin-bottom: 10px;">Thêm mới</a>
+                                        <a href="/controller/index.php?act=addNewAtHome" class="btn btn-danger mb-3" style="margin-bottom: 10px;width: 225px;"><h6>Thêm mới</h6></a>
                                         <thead class="text-capitalize">
                                             <tr>
                                                 <th>STT</th>
@@ -36,8 +36,8 @@
                                                                 <td>'.$hopdong['hd_tenKhachHang'].'</td>
                                                                 <td>'.$hopdong['hd_maSoThue'].'</td>
                                                                 <td>
-                                                                    <a href="/controller/index.php?act=detail&id='.$hopdong['hd_id'].'">Chi tiết</i></a> /
-                                                                    <a href="/controller/index.php?act=update&id='.$hopdong['hd_id'].'">Cập nhật</a>
+                                                                    <a style="width: 73px;" class="btn btn-primary btn-xs mb-3" href="/controller/index.php?act=detail&id='.$hopdong['hd_id'].'"> Chi tiết </i></a>
+                                                                    <a class="btn btn-danger btn-xs mb-3" href="/controller/index.php?act=update&id='.$hopdong['hd_id'].'">Cập nhật</a>
                                                                 </td>
                                                                 <td>'.$hopdong['hd_giaTien'].'</td>
                                                             </tr>
