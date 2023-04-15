@@ -23,52 +23,6 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                             <input required class="form-control" type="text" name="hd_tenNguoiLap" id="hd_tenNguoiLap">
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-form-label">Trạng Thái</label>
-                                            <select class="custom-select" name="hd_trangThai">
-                                                <option selected="selected" value="1">Gừi yêu cầu</option>
-                                                <!-- <option value="2">Đã nhập ĐHSXKD</option>
-                                                <option value="3">Chờ Gen</option>
-                                                <option value="4">Chờ trả BBBG</option>
-                                                <option value="5">Chờ xuất hóa đơn</option>
-                                                <option value="6">Chờ hoàn thiện</option>
-                                                <option value="7">Hủy yêu cầu</option> -->
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-form-label">Loại Yêu cầu</label>
-                                            <select class="custom-select" name="hd_loaiYeuCau">
-                                                <?php
-                                                    $array_request_package = getRequestPackage();
-                                                    if(isset($array_request_package) && (count($array_request_package) >= 1)){
-                                                        foreach ($array_request_package as $danhsachgoicuoc) {
-                                                            if($danhsachgoicuoc['dsgc_loaiHopDong'] !=""){
-                                                                echo'
-                                                                    <option value="'.$danhsachgoicuoc['dsgc_loaiHopDong'].'">'.$danhsachgoicuoc['dsgc_loaiHopDong'].'</option>
-                                                                ';
-                                                            }
-                                                        }
-                                                    }
-                                                ?>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-form-label">Dịch Vụ</label>
-                                            <select class="custom-select" name="hd_dichVu">
-                                                <?php
-                                                    $array_service_package = getServicePackage();
-                                                    if(isset($array_service_package) && (count($array_service_package) >= 1)){
-                                                        foreach ($array_service_package as $danhsachgoicuoc) {
-                                                            if($danhsachgoicuoc['dsgc_dichVu'] !=""){
-                                                                echo'
-                                                                    <option value="'.$danhsachgoicuoc['dsgc_dichVu'].'">'.$danhsachgoicuoc['dsgc_dichVu'].'</option>
-                                                                ';
-                                                            }
-                                                        }
-                                                    }
-                                                ?>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
                                             <label for="hd_maHopDong" class="col-form-label">Mã Hợp Đồng (*)</label>
                                             <input required class="form-control" type="text" name="hd_maHopDong" id="hd_maHopDong">
                                         </div>
@@ -89,8 +43,54 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                             <input class="form-control" type="text" name="hd_maBHXH" id="hd_maBHXH">
                                         </div>
                                         <div class="form-group">
+                                            <label class="col-form-label">Trạng Thái (*)</label>
+                                            <select class="custom-select" name="hd_trangThai">
+                                                <option selected="selected" value="1">Gừi yêu cầu</option>
+                                                <!-- <option value="2">Đã nhập ĐHSXKD</option>
+                                                <option value="3">Chờ Gen</option>
+                                                <option value="4">Chờ trả BBBG</option>
+                                                <option value="5">Chờ xuất hóa đơn</option>
+                                                <option value="6">Chờ hoàn thiện</option>
+                                                <option value="7">Hủy yêu cầu</option> -->
+                                            </select>
+                                        </div>
+                                        <div class="form-group loaiYeuCau">
+                                            <label class="col-form-label">Loại Yêu Cầu (*)</label>
+                                            <select class="custom-select" name="hd_loaiYeuCau" id="loaiYeuCau">
+                                                <?php
+                                                    $array_request_package = getRequestPackage();
+                                                    if(isset($array_request_package) && (count($array_request_package) >= 1)){
+                                                        foreach ($array_request_package as $danhsachgoicuoc) {
+                                                            if($danhsachgoicuoc['dsgc_loaiHopDong'] !=""){
+                                                                echo'
+                                                                    <option value="'.$danhsachgoicuoc['dsgc_loaiHopDong'].'">'.$danhsachgoicuoc['dsgc_loaiHopDong'].'</option>
+                                                                ';
+                                                            }
+                                                        }
+                                                    }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group dichVu">
+                                            <label class="col-form-label">Dịch Vụ (*)</label>
+                                            <select class="custom-select" name="hd_dichVu" id="dichVu">
+                                                <?php
+                                                    $array_service_package = getServicePackage();
+                                                    if(isset($array_service_package) && (count($array_service_package) >= 1)){
+                                                        foreach ($array_service_package as $danhsachgoicuoc) {
+                                                            if($danhsachgoicuoc['dsgc_dichVu'] !=""){
+                                                                echo'
+                                                                    <option value="'.$danhsachgoicuoc['dsgc_dichVu'].'">'.$danhsachgoicuoc['dsgc_dichVu'].'</option>
+                                                                ';
+                                                            }
+                                                        }
+                                                    }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group tenGoi">
                                             <label class="col-form-label">Tên Gói (*)</label>
-                                            <select class="custom-select" name="hd_tenGoi">
+                                            <select class="custom-select" name="hd_tenGoi" id="tenGoi">
                                                 <?php
                                                     $array_name_package = getNamePackage();
                                                     if(isset($array_name_package) && (count($array_name_package) >= 1)){
@@ -105,9 +105,10 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                                 ?>
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group thoiGian">
                                             <label class="col-form-label">Thời Gian (*)</label>
-                                            <select class="custom-select" name="hd_thoiGian">
+                                            <select class="custom-select" name="hd_thoiGian" id="thoiGian">
+                                                <!-- <option selected="selected">-----Chọn------</option> -->
                                                 <?php
                                                     $array_time_package = getTimePackage();
                                                     if(isset($array_time_package) && (count($array_time_package) >= 1)){
@@ -125,18 +126,18 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="hd_giaTruocThue" class="col-form-label">Giá Trước Thuế</label>
+                                            <label for="example-text-input" class="col-form-label">Giá Trước Thuế</label>
                                             <div class="input-group">
-                                                <input required type="text" name="hd_giaTruocThue" id="hd_giaTruocThue" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                                <input type="text" name="hd_giaTruocThue" class="form-control" aria-label="Amount (to the nearest dollar)" readonly>
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">VND</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="hd_thueVAT" class="col-form-label">Thuế VAT</label>
+                                            <label for="example-text-input" class="col-form-label">Thuế VAT</label>
                                             <div class="input-group">
-                                                <input required type="text" name="hd_thueVAT" id="hd_thueVAT" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                                <input type="text" name="hd_thueVAT" placeholder="10" readonly class="form-control" aria-label="Amount (to the nearest dollar)">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"> % </span>
                                                 </div>
@@ -144,8 +145,13 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                         </div>
                                         <div class="form-group">
                                             <label for="hd_giaTien" class="col-form-label">Giá Tiền</label>
+                                            <!-- <span id="text">???</span> -->
                                             <div class="input-group">
-                                                <input required type="text" name="hd_giaTien" id="hd_giaTien" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                                <?php 
+                                                    
+                                                ?>
+                                                <input readonly type="text" name="hd_giaTien" id="hd_giaTien" class="form-control"
+                                                placeholder="Vui lòng chọn thời gian!" aria-label="Amount (to the nearest dollar)">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">VND</span>
                                                 </div>
@@ -189,11 +195,11 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                         </div>
                                         <div class="form-group">
                                             <label for="hd_BBBG" class="col-form-label">BBBG (Cập nhật ngày trả)</label>
-                                            <input class="form-control" type="text" name="hd_BBBG" id="hd_BBBG">
+                                            <input class="form-control" readonly type="text" name="hd_BBBG" id="hd_BBBG">
                                         </div>  
                                         <div class="form-group">
                                             <label for="hd_GCN" class="col-form-label">GCN</label>
-                                            <input class="form-control" type="text" name="hd_GCN" id="hd_GCN">
+                                            <input class="form-control" readonly type="text" name="hd_GCN" id="hd_GCN">
                                         </div>
                                         <div class="form-group">
                                             <label for="hd_soHoaDon" class="col-form-label">Số Hóa Đơn</label>
@@ -209,13 +215,12 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                         </div>
                                         <div class="form-group">
                                             <label for="hd_mauHD" class="col-form-label">Mẫu Hóa Đơn</label>
-                                            <input class="form-control" type="text" name="hd_mauHD" id="hd_mauHD">
+                                            <input class="form-control" readonly type="text" name="hd_mauHD" id="hd_mauHD">
                                         </div>
                                         <div class="form-group">
                                             <label for="hd_ghiChu" class="col-form-label">Ghi chú</label>
                                             <textarea class="form-control" aria-label="With textarea" name="hd_ghiChu" id="hd_ghiChu"></textarea>
                                         </div>
-
                                         <input type="submit" class="btn btn-primary" name="btn_confirm_addNew" value="Xác nhận thêm mới">
                                         <a href="/controller/index.php?act=return" class="btn btn-warning">Trở về trang chủ</a>
                                         

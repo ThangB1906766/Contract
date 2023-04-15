@@ -37,14 +37,14 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                         <div class="form-group">
                                             <label class="col-form-label">Loại Yêu cầu</label>
                                             <select class="custom-select" name="hd_loaiYeuCau">
-                                                <option selected="selected" readonly><?=$nameOption[0]['lyc_loai']?></option>
+                                                <option selected="selected" readonly><?=$nameOption[0]['hd_loaiYeuCau']?></option>
                                                 <!-- <option value="1">Gia hạn</option> -->
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Dịch Vụ</label>
                                             <select class="custom-select" name="hd_dichVu" readonly>
-                                                <option selected="selected"><?=$nameOption[0]['dv_loai']?></option>
+                                                <option selected="selected"><?=$nameOption[0]['hd_dichVu']?></option>
                                                 <!-- <option value="1">CA + IVAN</option>
                                                 <option value="2">HDDT</option>
                                                 <option value="3">Phamarcy</option>
@@ -80,12 +80,12 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                         </div>
                                         <div class="form-group">
                                             <label for="example-number-input" class="col-form-label">Thời Gian (Tháng)</label>
-                                            <input class="form-control" type="number" name="hd_thoiGian" value="<?=$hopdongId[0]['hd_thoiGian']?>" readonly id="example-number-input">
+                                            <input class="form-control" type="text" name="hd_thoiGian" value="<?=$hopdongId[0]['hd_thoiGian']?>" readonly id="example-number-input">
                                         </div>
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Giá Trước Thuế</label>
                                             <div class="input-group">
-                                                <input type="text" name="hd_giaTruocThue" value="<?=$hopdongId[0]['hd_giaTruocThue']?>" class="form-control" aria-label="Amount (to the nearest dollar)" readonly>
+                                                <input type="text" name="hd_giaTruocThue"  class="form-control" aria-label="Amount (to the nearest dollar)" readonly>
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">VND</span>
                                                 </div>
@@ -94,7 +94,7 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Thuế VAT</label>
                                             <div class="input-group">
-                                                <input type="text" name="hd_thueVAT" value="<?=$hopdongId[0]['hd_thueVAT']?>" readonly class="form-control" aria-label="Amount (to the nearest dollar)">
+                                                <input type="text" name="hd_thueVAT" placeholder="10" readonly class="form-control" aria-label="Amount (to the nearest dollar)">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"> % </span>
                                                 </div>

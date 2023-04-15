@@ -8,19 +8,30 @@
     //     return $array_result;
     // }
 
+    // function getAllDataInTable(){
+    //     $conn=connectdb();
+    //     $stmt = $conn->prepare("SELECT hd.hd_id as hd_id, hd.hd_ngayKyHD as hd_ngayKyHD, hd.hd_tenNguoiLap as hd_tenNguoiLap, tt.tt_loai as hd_trangThai, lyc.lyc_loai as hd_loaiYeuCau,
+    //             dv.dv_loai as hd_dichVu, hd.hd_tenKhachHang as hd_tenKhachHang, hd.hd_maSoThue as hd_maSoThue, hd.hd_giaTien as hd_giaTien 
+    //             FROM hopdong hd 
+    //             JOIN trangthai tt
+    //                 ON hd.hd_trangThai = tt.hd_trangThai
+    //             JOIN loaiyeucau lyc
+    //                 ON hd.hd_loaiYeuCau = lyc.hd_loaiYeuCau
+    //             JOIN dichvu dv
+    //                 ON hd.hd_dichVu = dv.hd_dichVu
+    //              JOIN token tk
+    //                  ON hd.hd_token = tk.hd_token");
+    //     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    //     $stmt->execute();
+    //     $array_result = $stmt->fetchAll(); 
+    //     return $array_result;
+    // }
+
     function getAllDataInTable(){
         $conn=connectdb();
-        $stmt = $conn->prepare("SELECT hd.hd_id as hd_id, hd.hd_ngayKyHD as hd_ngayKyHD, hd.hd_tenNguoiLap as hd_tenNguoiLap, tt.tt_loai as hd_trangThai, lyc.lyc_loai as hd_loaiYeuCau,
-                dv.dv_loai as hd_dichVu, hd.hd_tenKhachHang as hd_tenKhachHang, hd.hd_maSoThue as hd_maSoThue, hd.hd_giaTien as hd_giaTien 
-                FROM hopdong hd 
-                JOIN trangthai tt
-                    ON hd.hd_trangThai = tt.hd_trangThai
-                JOIN loaiyeucau lyc
-                    ON hd.hd_loaiYeuCau = lyc.hd_loaiYeuCau
-                JOIN dichvu dv
-                    ON hd.hd_dichVu = dv.hd_dichVu
-                 JOIN token tk
-                     ON hd.hd_token = tk.hd_token");
+        $stmt = $conn->prepare("SELECT hd.hd_id as hd_id, hd.hd_ngayKyHD as hd_ngayKyHD, hd.hd_tenNguoiLap as hd_tenNguoiLap, tt.tt_loai as hd_trangThai, hd.hd_loaiYeuCau as hd_loaiYeuCau, hd.hd_dichVu as hd_dichVu, hd.hd_tenKhachHang as hd_tenKhachHang, hd.hd_maSoThue as hd_maSoThue, hd.hd_giaTien as hd_giaTien 
+        FROM hopdong hd JOIN trangthai tt ON hd.hd_trangThai = tt.hd_trangThai");
+               
         $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $stmt->execute();
         $array_result = $stmt->fetchAll(); 
@@ -72,21 +83,30 @@
         $conn->exec($sql);
         // echo "New record created successfully";
     }
+    
+    // function getOptionById($id){
+    //     $conn=connectdb();
+    //     $stmt = $conn->prepare("SELECT hd.hd_id as hd_id, hd.hd_ngayKyHD as hd_ngayKyHD, hd.hd_tenNguoiLap as hd_tenNguoiLap, tt.tt_loai as tt_loai, lyc.lyc_loai as lyc_loai, dv.dv_loai as dv_loai, hd.hd_tenKhachHang as hd_tenKhachHang, hd.hd_maSoThue as hd_maSoThue, hd.hd_giaTien as hd_giaTien, tk.token_loai as token_loai,
+    //     hd.hd_trangThai, hd.hd_loaiYeuCau, hd.hd_dichVu, hd.hd_token
+    //             FROM hopdong hd 
+    //             JOIN trangthai tt
+    //                 ON hd.hd_trangThai = tt.hd_trangThai
+    //             JOIN loaiyeucau lyc
+    //                 ON hd.hd_loaiYeuCau = lyc.hd_loaiYeuCau
+    //             JOIN dichvu dv
+    //                 ON hd.hd_dichVu = dv.hd_dichVu
+    //             JOIN token tk
+    //                  ON hd.hd_token = tk.hd_token
+    //             WHERE hd_id=".$id);
+    //     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    //     $stmt->execute();
+    //     $array_result = $stmt->fetchAll(); 
+    //     return $array_result;
+    // }
 
     function getOptionById($id){
         $conn=connectdb();
-        $stmt = $conn->prepare("SELECT hd.hd_id as hd_id, hd.hd_ngayKyHD as hd_ngayKyHD, hd.hd_tenNguoiLap as hd_tenNguoiLap, tt.tt_loai as tt_loai, lyc.lyc_loai as lyc_loai, dv.dv_loai as dv_loai, hd.hd_tenKhachHang as hd_tenKhachHang, hd.hd_maSoThue as hd_maSoThue, hd.hd_giaTien as hd_giaTien, tk.token_loai as token_loai,
-        hd.hd_trangThai, hd.hd_loaiYeuCau, hd.hd_dichVu, hd.hd_token
-                FROM hopdong hd 
-                JOIN trangthai tt
-                    ON hd.hd_trangThai = tt.hd_trangThai
-                JOIN loaiyeucau lyc
-                    ON hd.hd_loaiYeuCau = lyc.hd_loaiYeuCau
-                JOIN dichvu dv
-                    ON hd.hd_dichVu = dv.hd_dichVu
-                JOIN token tk
-                     ON hd.hd_token = tk.hd_token
-                WHERE hd_id=".$id);
+        $stmt = $conn->prepare("SELECT DISTINCT * FROM hopdong hd JOIN trangthai tt ON hd.hd_trangThai=tt.hd_trangThai JOIN token tk ON hd.hd_token=tk.hd_token WHERE hd_id=".$id);
         $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $stmt->execute();
         $array_result = $stmt->fetchAll(); 

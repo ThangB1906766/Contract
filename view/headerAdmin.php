@@ -59,9 +59,9 @@
                     <nav>
                         <ul class="metismenu" id="menu">
                             <li class="active">
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Thao Tác</span></a>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Chuyển Hướng</span></a>
                                 <ul class="collapse">
-                                    <li class="active"><a href="#">Nhập liệu</a></li>
+                                    <li class="active"><a href="/controller/index.php?act=return">Trang chủ</a></li>
                                     <!-- <li><a href="index2.html">Ecommerce dashboard</a></li>
                                     <li><a href="index3.html">SEO dashboard</a></li> -->
                                 </ul>

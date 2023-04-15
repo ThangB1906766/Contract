@@ -70,4 +70,22 @@
         $array_request_package = $stmt->fetchAll(); 
         return $array_request_package;
     }
+
+    function getMoney($thoiGian, $tenGoi, $dichVu, $loaiYeuCau){
+        $conn=connectdb();
+        $stmt = $conn->prepare("SELECT ds.dsgc_thanhTien as dsgc_thanhTien FROM danhsachgoicuoc ds WHERE dsgc_dichVu='".$dichVu."' AND dsgc_loaiHopDong='".$loaiYeuCau."' AND dsgc_tenGoiCuoc='".$tenGoi."' AND dsgc_thoiGian='".$thoiGian."'");
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+        $array_dsgc_thanhTien = $stmt->fetchAll();
+        return $array_dsgc_thanhTien;
+    }
+
+    function getID_loaiyeucau(){
+        $conn=connectdb();
+        $stmt = $conn->prepare("SELECT DISTINCT lyc.hd_loaiYeuCau as id_loaiYeuCau, lyc.lyc_loai as ten_loaiYeuCau FROM `loaiyeucau` lyc JOIN danhsachgoicuoc ds ON lyc.lyc_loai = ds.dsgc_loaiHopDong");
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+        $array_request_package = $stmt->fetchAll(); 
+        return $array_request_package;
+    }
 ?>
