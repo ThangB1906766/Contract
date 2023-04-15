@@ -5,6 +5,8 @@
         include "../model/connectdb.php";
         include "../model/user.php"; 
         include "../model/table.php";
+        include "../model/form.php";
+
         
             if(isset($_GET['act'])){
                 $act = $_GET['act'];
@@ -18,7 +20,9 @@
                                     $_SESSION['user_role'] = $role;
                                     $_SESSION['user_taiKhoan'] = $user;
 
+                                    // $array_result = getAllDataInTable();
                                     $array_result = getAllDataInTable();
+
                                     include "../view/headerAdmin.php";
                                     include "../view/home.php";
                                     include "../view/footerAdmin.php";
@@ -94,8 +98,8 @@
                         case 'detail':
                             if(isset($_GET['id'])){
                                 $id = $_GET['id'];
-                                $hopdongId= getDataById($id);
-
+                                $hopdongId= getDataById($id); // Hiển thị dữ liệu lên form theo id
+                                $nameOption= getOptionById($id); // Hiển thị tên option trong csdl theo id
                                 $array_result = getAllDataInTable();
                                 include "../view/headerAdmin.php";
                                 include "../view/detailFormUI.php";
@@ -106,7 +110,7 @@
                                 if(isset($_GET['id'])){
                                     $id = $_GET['id'];
                                     $hopdongId= getDataById($id);
-    
+                                    $nameOption= getOptionById($id);
                                     $array_result = getAllDataInTable();
                                     include "../view/headerAdmin.php";
                                     include "../view/updateFormUI.php";

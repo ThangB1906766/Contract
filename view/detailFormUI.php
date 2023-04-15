@@ -25,33 +25,33 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                         <div class="form-group">
                                             <label class="col-form-label">Trạng Thái</label>
                                             <select class="custom-select" name="hd_trangThai" readonly>
-                                                <option selected="selected">Gừi yêu cầu</option>
-                                                <option value="1">Đã nhập ĐHSXKD</option>
+                                                <option selected="selected"><?=$nameOption[0]['tt_loai']?></option>
+                                                <!-- <option value="1">Đã nhập ĐHSXKD</option>
                                                 <option value="2">Chờ Gen</option>
                                                 <option value="3">Chờ trả BBBG</option>
                                                 <option value="4">Chờ xuất hóa đơn</option>
                                                 <option value="5">Chờ hoàn thiện</option>
-                                                <option value="6">Hủy yêu cầu</option>
+                                                <option value="6">Hủy yêu cầu</option> -->
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Loại Yêu cầu</label>
                                             <select class="custom-select" name="hd_loaiYeuCau">
-                                                <option selected="selected" readonly>Tạo mới</option>
-                                                <option value="1">Gia hạn</option>
+                                                <option selected="selected" readonly><?=$nameOption[0]['lyc_loai']?></option>
+                                                <!-- <option value="1">Gia hạn</option> -->
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Dịch Vụ</label>
                                             <select class="custom-select" name="hd_dichVu" readonly>
-                                                <option selected="selected">VNPT BHXH</option>
-                                                <option value="1">CA + IVAN</option>
+                                                <option selected="selected"><?=$nameOption[0]['dv_loai']?></option>
+                                                <!-- <option value="1">CA + IVAN</option>
                                                 <option value="2">HDDT</option>
                                                 <option value="3">Phamarcy</option>
                                                 <option value="4">SmartCA</option>
                                                 <option value="5">eReceipt</option>
                                                 <option value="6">VNPT HKD</option>
-                                                <option value="7">BLDT</option>
+                                                <option value="7">BLDT</option> -->
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -124,9 +124,9 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                     <div class="form-group">
                                             <label class="col-form-label">Token</label>
                                             <select class="custom-select" name="hd_token" readonly>
-                                                <option selected="selected">Mua</option>
-                                                <option value="1">Tự trang bị</option>
-                                                <option value="2">Khuyến mãi</option>
+                                                <option selected="selected"><?=$nameOption[0]['token_loai']?></option>
+                                                <!-- <option value="1">Tự trang bị</option>
+                                                <option value="2">Khuyến mãi</option> -->
                                             </select>
                                         </div>
                                         <div class="form-group">

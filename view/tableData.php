@@ -2,7 +2,7 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Sanh Sách Khởi Tạo Dịch Vụ</h4>
+                                <h4 class="header-title">DANH SÁCH KHỞI TẠO DỊCH VỤ</h4>
                                 <div class="data-tables datatable-primary">
                                     <table id="dataTable2" class="text-center">
                                         <a href="/controller/index.php?act=addNewAtHome" class="btn btn-danger mb-3" style="margin-bottom: 10px;width: 225px;"><h6>Thêm mới</h6></a>
@@ -22,6 +22,7 @@
                                         </thead>
                                         <tbody>
                                             <?php 
+                                                // var_dump($array_result);
                                                  if(isset($array_result) && (count($array_result) >= 1)){
                                                     $stt=1;
                                                     foreach ($array_result as $hopdong) {

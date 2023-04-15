@@ -3,7 +3,7 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
 
 ?>
 
-<div class="main-content-inner">
+<div class="main-content-inner">-+
                 <div class="row">
                 <!-- Start form input -->
                 <div class="col-lg-6 col-ml-12">
@@ -26,33 +26,65 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                         <div class="form-group">
                                             <label class="col-form-label">Trạng Thái</label>
                                             <select class="custom-select" name="hd_trangThai">
-                                                <option selected="selected">Gừi yêu cầu</option>
-                                                <option value="1">Đã nhập ĐHSXKD</option>
-                                                <option value="2">Chờ Gen</option>
-                                                <option value="3">Chờ trả BBBG</option>
-                                                <option value="4">Chờ xuất hóa đơn</option>
-                                                <option value="5">Chờ hoàn thiện</option>
-                                                <option value="6">Hủy yêu cầu</option>
+                                                <option selected="selected" value="<?=$nameOption[0]['hd_trangThai']?>"><?=$nameOption[0]['tt_loai']?></option>
+                                                <?php
+                                                    $array_result_status = getStatus();
+                                                    if(isset($array_result_status) && (count($array_result_status) >= 1)){
+                                                        foreach ($array_result_status as $trangthai) {
+                                                            echo'
+                                                                <option value="'.$trangthai['hd_trangThai'].'">'.$trangthai['tt_loai'].'</option>
+                                                            ';
+                                                        }
+                                                    }
+                                                ?>
+                                                <!-- <option value="2">Đã nhập ĐHSXKD</option>
+                                                <option value="3">Chờ Gen</option>
+                                                <option value="4">Chờ trả BBBG</option>
+                                                <option value="5">Chờ xuất hóa đơn</option>
+                                                <option value="6">Chờ hoàn thiện</option>
+                                                <option value="77">Hủy yêu cầu</option> -->
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Loại Yêu cầu</label>
                                             <select class="custom-select" name="hd_loaiYeuCau">
-                                                <option selected="selected">Tạo mới</option>
-                                                <option value="1">Gia hạn</option>
+                                                 <option selected="selected" value="<?=$nameOption[0]['hd_loaiYeuCau']?>"><?=$nameOption[0]['lyc_loai']?></option>
+                                                <?php
+                                                    $array_result_typeOfRequest = getTypeOfRequest();
+                                                        if(isset($array_result_typeOfRequest) && (count($array_result_typeOfRequest) >= 1)){
+                                                            foreach ($array_result_typeOfRequest as $loaiyeucau) {
+                                                                echo'
+                                                                    <option value="'.$loaiyeucau['hd_loaiYeuCau'].'">'.$loaiyeucau['lyc_loai'].'</option>
+                                                                ';
+                                                            }
+                                                        }
+                                                ?>
+                                                <!-- <option selected="selected" value="1">Tạo mới</option>
+                                                <option value="2">Gia hạn</option> -->
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Dịch Vụ</label>
                                             <select class="custom-select" name="hd_dichVu">
-                                                <option selected="selected">VNPT BHXH</option>
-                                                <option value="1">CA + IVAN</option>
-                                                <option value="2">HDDT</option>
-                                                <option value="3">Phamarcy</option>
-                                                <option value="4">SmartCA</option>
-                                                <option value="5">eReceipt</option>
-                                                <option value="6">VNPT HKD</option>
-                                                <option value="7">BLDT</option>
+                                                <option selected="selected" value="<?=$nameOption[0]['hd_dichVu']?>"><?=$nameOption[0]['dv_loai']?></option>
+                                                <?php
+                                                        $array_result_typeOfService = getTypeOfService();
+                                                        if(isset($array_result_typeOfService) && (count($array_result_typeOfService) >= 1)){
+                                                            foreach ($array_result_typeOfService as $dichvu) {
+                                                                echo'
+                                                                    <option value="'.$dichvu['hd_dichVu'].'">'.$dichvu['dv_loai'].'</option>
+                                                                ';
+                                                            }
+                                                        }
+                                                ?>
+                                                <!-- <option selected="selected" value="1">VNPT BHXH</option>
+                                                <option value="2">CA + IVAN</option>
+                                                <option value="3">HDDT</option>
+                                                <option value="4">Phamarcy</option>
+                                                <option value="5">SmartCA</option>
+                                                <option value="6">eReceipt</option>
+                                                <option value="7">VNPT HKD</option>
+                                                <option value="8">BLDT</option> -->
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -125,9 +157,20 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                     <div class="form-group">
                                             <label class="col-form-label">Token</label>
                                             <select class="custom-select" name="hd_token">
-                                                <option selected="selected">Mua</option>
-                                                <option value="1">Tự trang bị</option>
-                                                <option value="2">Khuyến mãi</option>
+                                                <option selected="selected" value="<?=$nameOption[0]['hd_token']?>"><?=$nameOption[0]['token_loai']?></option>
+                                                <?php
+                                                        $array_result_typeOfToken = getTypeOfToken();
+                                                        if(isset($array_result_typeOfToken) && (count($array_result_typeOfToken) >= 1)){
+                                                            foreach ($array_result_typeOfToken as $token) {
+                                                                echo'
+                                                                    <option value="'.$token['hd_token'].'">'.$token['token_loai'].'</option>
+                                                                ';
+                                                            }
+                                                        }
+                                                ?>
+                                                <!-- <option selected="selected" value="1">Mua</option>
+                                                <option value="2">Tự trang bị</option>
+                                                <option value="3">Khuyến mãi</option> -->
                                             </select>
                                         </div>
                                         <div class="form-group">
