@@ -3,7 +3,7 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
 
 ?>
 
-<div class="main-content-inner">-+
+<div class="main-content-inner">
                 <div class="row">
                 <!-- Start form input -->
                 <div class="col-lg-6 col-ml-12">
@@ -16,8 +16,12 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                     <div class="card-body">
                                         <h4 class="header-title">CẬP NHẬT</h4>
                                         <div class="form-group">
+                                            <label for="example-date-input" class="col-form-label">Ngày Yêu Cầu</label>
+                                            <input required class="form-control" type="date" name="hd_ngayYeuCau" value="<?=$hopdongId[0]['hd_ngayYeuCau']?>" id="example-date-input">
+                                        </div>
+                                        <div class="form-group">
                                             <label for="example-date-input" class="col-form-label">Ngày Ký Hợp Đồng</label>
-                                            <input required class="form-control" type="date" name="hd_ngayKyHD" value="<?=$hopdongId[0]['hd_ngayKyHD']?>" id="example-date-input">
+                                            <input class="form-control" type="date" name="hd_ngayKyHD" value="<?=$hopdongId[0]['hd_ngayKyHD']?>" id="example-date-input">
                                         </div>
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Tên Người Lập</label>
@@ -54,8 +58,40 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                             <input required class="form-control" type="text" name="hd_tenKhachHang" value="<?=$hopdongId[0]['hd_tenKhachHang']?>" id="example-text-input">
                                         </div>
                                         <div class="form-group">
+                                            <label class="col-form-label">Tỉnh/Thành Phố (*)</label>
+                                            <select class="custom-select tinhThanhPho" name="tinhThanhPho">
+                                                <option selected="selected" value="<?=$diaChiId[0]['matp']?>">-----<?=$diaChiId[0]['tenTinhThanhPho']?>-----</option>
+                                                <?php
+                                                    $array_tinhthanhpho = getTinhThanhPho();
+                                                    if(isset($array_tinhthanhpho) && (count($array_tinhthanhpho) >= 1)){
+                                                        foreach ($array_tinhthanhpho as $tinhthanhpho) {
+                                                            if($tinhthanhpho['name'] !=""){
+                                                                echo'
+                                                                    <option value="'.$tinhthanhpho['matp'].'">'.$tinhthanhpho['name'].'</option>
+                                                                ';
+                                                            }
+                                                        }
+                                                    }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Quận/Huyện (*)</label>
+                                            <select class="custom-select quanHuyen" name="quanHuyen">
+                                            <option selected="selected" value="<?=$diaChiId[0]['maqh']?>">-----<?=$diaChiId[0]['tenQuanHuyen']?>-----</option>
+                                                
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Phường/Xã (*)</label>
+                                            <select class="custom-select xaPhuongThiTran" name="xaPhuongThiTran">
+                                                <<option selected="selected" value="<?=$diaChiId[0]['xaid']?>">-----<?=$diaChiId[0]['tenXaPhuongThiTran']?>-----</option>
+                                                
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Địa chỉ Khách Hàng</label>
-                                            <input required class="form-control" type="text" name="hd_diaChiKH" value="<?=$hopdongId[0]['hd_diaChiKH']?>" id="example-text-input">
+                                            <input readonly class="form-control" type="text" name="hd_diaChiKH" value="<?=$hopdongId[0]['hd_diaChiKH']?>" id="example-text-input">
                                         </div>
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Mã Số Thuế</label>
@@ -83,18 +119,19 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                             </select>
                                         </div>
                                         <div class="form-group dichVu">
-                                            <label class="col-form-label">Dịch Vụ</label>
+                                            <label class="col-form-label">Dịch Vụ (*)</label>
                                             <select class="custom-select" name="hd_dichVu" id="dichVu">
-                                                <option selected="selected" value="<?=$nameOption[0]['hd_dichVu']?>"><?=$nameOption[0]['hd_dichVu']?></option>
                                                 <?php
-                                                        $array_result_typeOfService = getTypeOfService();
-                                                        if(isset($array_result_typeOfService) && (count($array_result_typeOfService) >= 1)){
-                                                            foreach ($array_result_typeOfService as $dichvu) {
+                                                    $array_service_package = getServicePackage();
+                                                    if(isset($array_service_package) && (count($array_service_package) >= 1)){
+                                                        foreach ($array_service_package as $danhsachgoicuoc) {
+                                                            if($danhsachgoicuoc['dsgc_dichVu'] !=""){
                                                                 echo'
-                                                                    <option value="'.$dichvu['hd_dichVu'].'">'.$dichvu['dv_loai'].'</option>
+                                                                    <option value="'.$danhsachgoicuoc['dsgc_dichVu'].'">'.$danhsachgoicuoc['dsgc_dichVu'].'</option>
                                                                 ';
                                                             }
                                                         }
+                                                    }
                                                 ?>
                                             </select>
                                         </div>

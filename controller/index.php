@@ -6,8 +6,12 @@
         include "../model/user.php"; 
         include "../model/table.php";
         include "../model/form.php";
+        include "../model/getTinhThanhPho.php";
+        // include "../view/getQuanHuyen.php";
+        // include "../view/getXaPhuongThiTran.php";
 
-        
+
+
             if(isset($_GET['act'])){
                 $act = $_GET['act'];
                     switch ($act) {
@@ -42,6 +46,7 @@
                             
                             if(isset($_POST['btn_confirm_addNew']) && $_POST['btn_confirm_addNew']){
                                 $hd_ngayKyHD = $_POST['hd_ngayKyHD'];
+                                $hd_ngayYeuCau = $_POST['hd_ngayYeuCau'];
                                 $hd_tenNguoiLap = $_POST['hd_tenNguoiLap'];
                                 $hd_trangThai = $_POST['hd_trangThai'];
                                 $hd_loaiYeuCau = $_POST['hd_loaiYeuCau'];
@@ -68,7 +73,15 @@
                                 $hd_ngayXuatHD = $_POST['hd_ngayXuatHD'];
                                 $hd_mauHD = $_POST['hd_mauHD'];
                                 $hd_ghiChu = $_POST['hd_ghiChu'];
-                                addNewData($hd_ngayKyHD, $hd_tenNguoiLap, $hd_trangThai, $hd_loaiYeuCau, $hd_dichVu, $hd_maHopDong, $hd_tenKhachHang, $hd_diaChiKH, $hd_maSoThue, $hd_maBHXH, $hd_tenGoi, $hd_thoiGian, $hd_giaTruocThue, $hd_thueVAT, $hd_giaTien, $hd_token, $hd_maGiaoDich, $hd_maThueBao, $hd_userName, $hd_soSeri, $hd_BBBG, $hd_GCN, $hd_soHoaDon, $hd_maTraCuuHD, $hd_ngayXuatHD, $hd_mauHD, $hd_ghiChu);
+
+                                $tinhThanhPho = $_POST['tinhThanhPho'];
+                                $quanHuyen = $_POST['quanHuyen'];
+                                $xaPhuongThiTran = $_POST['xaPhuongThiTran'];
+
+
+                                // addDiaChi($tinhThanhPho, $quanHuyen, $xaPhuongThiTran);
+
+                                addNewData($hd_ngayYeuCau, $hd_ngayKyHD, $hd_tenNguoiLap, $hd_trangThai, $hd_loaiYeuCau, $hd_dichVu, $hd_maHopDong, $hd_tenKhachHang, $hd_diaChiKH, $hd_maSoThue, $hd_maBHXH, $hd_tenGoi, $hd_thoiGian, $hd_giaTruocThue, $hd_thueVAT, $hd_giaTien, $hd_token, $hd_maGiaoDich, $hd_maThueBao, $hd_userName, $hd_soSeri, $hd_BBBG, $hd_GCN, $hd_soHoaDon, $hd_maTraCuuHD, $hd_ngayXuatHD, $hd_mauHD, $hd_ghiChu, $tinhThanhPho,  $quanHuyen, $xaPhuongThiTran);
                             }
 
                             $array_result = getAllDataInTable();
@@ -99,6 +112,7 @@
                             if(isset($_GET['id'])){
                                 $id = $_GET['id'];
                                 $hopdongId= getDataById($id); // Hiển thị dữ liệu lên form theo id
+                                $diaChiId = getDiaChiById($id);
                                 $nameOption= getOptionById($id); // Hiển thị tên option trong csdl theo id
                                 $array_result = getAllDataInTable();
                                 include "../view/headerAdmin.php";
@@ -110,6 +124,7 @@
                                 if(isset($_GET['id'])){
                                     $id = $_GET['id'];
                                     $hopdongId= getDataById($id);
+                                    $diaChiId = getDiaChiById($id);
                                     $nameOption= getOptionById($id);
                                     $array_result = getAllDataInTable();
                                     include "../view/headerAdmin.php";
@@ -118,6 +133,7 @@
                                 }
                                 if(isset($_POST['hd_id'])){
                                         $hd_id = $_POST['hd_id'];
+                                        $hd_ngayYeuCau = $_POST['hd_ngayYeuCau'];
                                         $hd_ngayKyHD = $_POST['hd_ngayKyHD'];
                                         $hd_tenNguoiLap = $_POST['hd_tenNguoiLap'];
                                         $hd_trangThai = $_POST['hd_trangThai'];
@@ -145,7 +161,12 @@
                                         $hd_ngayXuatHD = $_POST['hd_ngayXuatHD'];
                                         $hd_mauHD = $_POST['hd_mauHD'];
                                         $hd_ghiChu = $_POST['hd_ghiChu'];
-                                    updateDataById($hd_id, $hd_ngayKyHD, $hd_tenNguoiLap, $hd_trangThai, $hd_loaiYeuCau, $hd_dichVu, $hd_maHopDong, $hd_tenKhachHang, $hd_diaChiKH, $hd_maSoThue, $hd_maBHXH, $hd_tenGoi, $hd_thoiGian, $hd_giaTruocThue, $hd_thueVAT, $hd_giaTien, $hd_token, $hd_maGiaoDich, $hd_maThueBao, $hd_userName, $hd_soSeri, $hd_BBBG, $hd_GCN, $hd_soHoaDon, $hd_maTraCuuHD, $hd_ngayXuatHD, $hd_mauHD, $hd_ghiChu);
+
+                                        $tinhThanhPho = $_POST['tinhThanhPho'];
+                                        $quanHuyen = $_POST['quanHuyen'];
+                                        $xaPhuongThiTran = $_POST['xaPhuongThiTran'];
+
+                                    updateDataById($hd_id, $hd_ngayYeuCau, $hd_ngayKyHD, $hd_tenNguoiLap, $hd_trangThai, $hd_loaiYeuCau, $hd_dichVu, $hd_maHopDong, $hd_tenKhachHang, $hd_diaChiKH, $hd_maSoThue, $hd_maBHXH, $hd_tenGoi, $hd_thoiGian, $hd_giaTruocThue, $hd_thueVAT, $hd_giaTien, $hd_token, $hd_maGiaoDich, $hd_maThueBao, $hd_userName, $hd_soSeri, $hd_BBBG, $hd_GCN, $hd_soHoaDon, $hd_maTraCuuHD, $hd_ngayXuatHD, $hd_mauHD, $hd_ghiChu, $tinhThanhPho,  $quanHuyen, $xaPhuongThiTran);
                                     
                                     $array_result = getAllDataInTable();
                                     include "../view/headerAdmin.php";

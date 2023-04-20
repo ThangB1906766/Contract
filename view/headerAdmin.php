@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="/view/assets/css/responsive.css">
     <!-- modernizr css -->
     <script src="/view/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    
 </head>
 <body>
     <!--[if lt IE 8]>

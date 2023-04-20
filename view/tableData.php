@@ -9,7 +9,7 @@
                                         <thead class="text-capitalize">
                                             <tr>
                                                 <th>STT</th>
-                                                <th>Ngày Ký Hợp Đồng</th>
+                                                <th>Ngày Yêu Cầu</th>
                                                 <th>Tên Nhân Viên Lập</th>
                                                 <th>Trạng Thái</th>
                                                 <th>Loại Yêu Cầu</th>
@@ -29,7 +29,7 @@
                                                         echo '
                                                             <tr>
                                                                 <th scope="row">'.$stt.'</th>
-                                                                <td>'.$hopdong['hd_ngayKyHD'].'</td>
+                                                                <td>'.$hopdong['hd_ngayYeuCau'].'</td>
                                                                 <td>'.$hopdong['hd_tenNguoiLap'].'</td>
                                                                 <td>'.$hopdong['hd_trangThai'].'</td>
                                                                 <td>'.$hopdong['hd_loaiYeuCau'].'</td>

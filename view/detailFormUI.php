@@ -15,6 +15,10 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                     <div class="card-body">
                                         <h4 class="header-title">CHI TIẾT</h4>
                                         <div class="form-group">
+                                            <label for="example-date-input" class="col-form-label">Ngày Yêu Cầu</label>
+                                            <input class="form-control" type="date" name="hd_ngayYeuCau" value="<?=$hopdongId[0]['hd_ngayYeuCau']?>" id="example-date-input" readonly> 
+                                        </div>
+                                        <div class="form-group">
                                             <label for="example-date-input" class="col-form-label">Ngày Ký Hợp Đồng</label>
                                             <input class="form-control" type="date" name="hd_ngayKyHD" value="<?=$hopdongId[0]['hd_ngayKyHD']?>" id="example-date-input" readonly> 
                                         </div>
@@ -64,7 +68,14 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                         </div>
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Địa chỉ Khách Hàng</label>
-                                            <input class="form-control" type="text" name="hd_diaChiKH" value="<?=$hopdongId[0]['hd_diaChiKH']?>" readonly id="example-text-input">
+                                            <?php 
+                                                $tenXaPhuongThiTran = $diaChiId[0]['tenXaPhuongThiTran'];
+                                                $tenQuanHuyen = $diaChiId[0]['tenQuanHuyen'];
+                                                $tenTinhThanhPho = $diaChiId[0]['tenTinhThanhPho'];
+                                                $diaChi = $tenXaPhuongThiTran.',  '.$tenQuanHuyen.',  '.$tenTinhThanhPho;
+
+                                            ?>
+                                            <input class="form-control" type="text" name="hd_diaChiKH" value="<?=$diaChi?>" readonly id="example-text-input">
                                         </div>
                                         <div class="form-group">
                                             <label for="example-text-input" class="col-form-label">Mã Số Thuế</label>

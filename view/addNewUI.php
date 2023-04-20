@@ -15,8 +15,12 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                     <div class="card-body">
                                         <h4 class="header-title">THÊM MỚI</h4>
                                         <div class="form-group">
-                                            <label for="hd_ngayKyHD" class="col-form-label">Ngày Ký Hợp Đồng (*)</label>
-                                            <input required class="form-control" type="date" name="hd_ngayKyHD" id="hd_ngayKyHD">
+                                            <label for="hd_ngayYeuCau" class="col-form-label">Ngày Yêu Cấu (*)</label>
+                                            <input required class="form-control" type="date" name="hd_ngayYeuCau" id="hd_ngayYeuCau">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="hd_ngayKyHD" class="col-form-label">Ngày Ký Hợp Đồng</label>
+                                            <input class="form-control" type="date" name="hd_ngayKyHD" id="hd_ngayKyHD">
                                         </div>
                                         <div class="form-group">
                                             <label for="hd_tenNguoiLap" class="col-form-label">Tên Người Lập (*)</label>
@@ -31,8 +35,40 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_role'] == 1)) {
                                             <input required class="form-control" type="text" name="hd_tenKhachHang" id="hd_tenKhachHang">
                                         </div>
                                         <div class="form-group">
+                                            <label class="col-form-label">Tỉnh/Thành Phố (*)</label>
+                                            <select required  class="custom-select tinhThanhPho" name="tinhThanhPho">
+                                                <option required selected="selected" value="">-----Chọn-----</option>
+                                                <?php
+                                                    $array_tinhthanhpho = getTinhThanhPho();
+                                                    if(isset($array_tinhthanhpho) && (count($array_tinhthanhpho) >= 1)){
+                                                        foreach ($array_tinhthanhpho as $tinhthanhpho) {
+                                                            if($tinhthanhpho['name'] !=""){
+                                                                echo'
+                                                                    <option value="'.$tinhthanhpho['matp'].'">'.$tinhthanhpho['name'].'</option>
+                                                                ';
+                                                            }
+                                                        }
+                                                    }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Quận/Huyện (*)</label>
+                                            <select required class="custom-select quanHuyen" name="quanHuyen">
+                                                <option required selected="selected" value="">-----Chọn-----</option>
+                                                
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Phường/Xã (*)</label>
+                                            <select required  class="custom-select xaPhuongThiTran" name="xaPhuongThiTran">
+                                                <option required selected="selected" value="">-----Chọn-----</option>
+                                                
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="hd_diaChiKH" class="col-form-label">Địa chỉ Khách Hàng (*)</label>
-                                            <input required class="form-control" type="text" name="hd_diaChiKH" id="hd_diaChiKH">
+                                            <input readonly class="form-control" type="text" name="hd_diaChiKH" id="hd_diaChiKH">
                                         </div>
                                         <div class="form-group">
                                             <label for="hd_maSoThue" class="col-form-label">Mã Số Thuế (*)</label>
